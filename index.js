@@ -1,4 +1,4 @@
-require('dotenv').config;
+require('dotenv').config();
 
 const express = require('express');
 const axios = require('axios');
@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
-const PRIVATE_APP_ACCESS = JESSICAS_API_KEY;
+const PRIVATE_APP_ACCESS = process.env.JESSICAS_API_KEY;
 
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
     try {
         const resp = await axios.get(plants, { headers });
         const data = resp.data.results;
-        res.render('plants', { title: 'Plants | HubSpot APIs', data });      
+        res.render('homepage', { title: 'Plants | HubSpot APIs', data });      
     } catch (error) {
         console.error(error);
     }

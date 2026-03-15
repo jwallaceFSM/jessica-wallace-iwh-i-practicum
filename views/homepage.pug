@@ -9,7 +9,7 @@ html
      body    
          h1 Texas Native Plants
          .cards 
-             each contact in data
+             each plant in data
                  .card 
-                     h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
-                     p.card__email #{contact.properties.email}
+                     h2.card__name #{plant.properties.name}  #{plant.properties.zone}
+                     p.card__email #{plant.properties.sunlight}

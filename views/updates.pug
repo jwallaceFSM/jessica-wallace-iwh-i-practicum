@@ -7,17 +7,33 @@ html
          meta(name="viewport" content="width=device-width, initial-scale=1")
          link(rel="stylesheet", href="/css/style.css")
      body    
-         h1 Texas Native Plants
+         .form-container 
+            h2 Create a New Plant 
+            form(method="POST")
+                label(for="plantName") Plant Name 
+                input(type="text" name="plantName" required)
+
+                label(for="plantZone") Zone 
+                select(name="plantZone" required)
+                    option(value="" disabled selected) Select a Zone
+                    option(value="6b") Zone 6b
+                    option(value="7a") Zone 7a
+                    option(value="7b") Zone 7b
+                    option(value="8a") Zone 8a
+                    option(value="8b") Zone 8b
+                    option(value="9a") Zone 9a
+                    option(value="9b") Zone 9b
+                    option(value="10a") Zone 10a
+                    option(value="10b") Zone 10b
+
+                label(for="plantSunlight") Zone 
+                select(name="plantSunlight" required)
+                    option(value="" disabled selected) Select Sunlight
+                    option(value="Full Sun") Full Sun
+                    option(value="Full Shade") Full Shade
+                    option(value="Morning Sun/Afternoon Shade") Morning Sun/Afternoon Shade
+                    option(value="Morning Shade/Afternoon Sun") Morning Shade/Afternoon Sun
+                    option(value="Moderate") Zone Moderate
+                button(type="submit") Submit
          a.button(href="/") Return to the homepage
-            table
-                thead
-                    tr
-                        th Name 
-                        th Zone 
-                        th Sunlight 
-                tbody
-                    each plant in data
-                        tr
-                            td #{plant.properties.name}
-                            td #{plant.properties.zone}
-                            td #{plant.properties.sunlight}
+            

@@ -32,14 +32,14 @@ app.get('/', async (req, res) => {
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 
 app.get('/update-cobj', async (req, res) => {
-    const updatePlants = 'https://api.hubspot.com/crm/v3/objects/2-59113878?properties=name,zone,sunlight';
-    const headers = {
-        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
-        'Content-Type': 'application/json'
-    }
+    //const updatePlants = 'https://api.hubspot.com/crm/v3/objects/2-59113878?properties=name,zone,sunlight';
+    //const headers = {
+    //    Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+     //   'Content-Type': 'application/json'
+   // }
     try {
-        const resp = await axios.get(updatePlants, { headers });
-        const data = resp.data.results;
+        //const resp = await axios.get(updatePlants, { headers });
+        //const data = resp.data.results;
         res.render('updates', { title: 'Update Custom Object Form | Integrating With HubSpot I Practicum | HubSpot APIs', data });      
     } catch (error) {
         console.error(error);

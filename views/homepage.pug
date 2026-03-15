@@ -8,9 +8,15 @@ html
          link(rel="stylesheet", href="/css/style.css")
      body    
          h1 Texas Native Plants
-         .cards 
-             each plant in data
-                 .card 
-                     h2.card__name #{plant.properties.name}  
-                     p.card__details strong ZONE: #{plant.properties.zone}
-                     p.card__details strong SUNLIGHT: #{plant.properties.sunlight}
+            table
+                thead
+                    tr
+                        th Name 
+                        th Zone 
+                        th Sunlight 
+                tbody
+                    each plant in data
+                        tr
+                            td #{plant.properties.name}
+                            td #{plant.properties.zone}
+                            td #{plant.properties.sunlight}

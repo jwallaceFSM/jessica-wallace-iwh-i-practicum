@@ -15,7 +15,7 @@ const PRIVATE_APP_ACCESS = process.env.JESSICAS_API_KEY;
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
 app.get('/', async (req, res) => {
-    const plants = 'https://api.hubspot.com/crm/v3/objects/2-59113878';
+    const plants = 'https://api.hubspot.com/crm/v3/objects/2-59113878?properties=name,zone,sunlight';
     const headers = {
         Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
         'Content-Type': 'application/json'
